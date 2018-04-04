@@ -10,7 +10,10 @@ app = Flask(__name__)
 @app.route('/')
 def mainPage():
 	return render_template('index.html',
-		w = w[0:page_size])
+		w = w[0:page_size],
+		page_number = 0,
+		page_size = page_size
+		)
 
 @app.route('/begin/<b>')
 def beginPage(b):
